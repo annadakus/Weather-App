@@ -1,0 +1,231 @@
+body {
+	padding-top: 30px;
+	font-family: 'Titan One', cursive;
+	background-color: #87CEFA;
+	margin: 0;
+}
+.app {
+	font-size: 56px;
+	color: #696969;
+}
+.images{
+	position: absolute;
+	left: 50%;
+	z-index: 0;
+	height: 580px;
+
+}
+.temperature {
+	cursor: pointer;
+}
+.temperature:hover {
+	color: grey;
+}
+
+
+/*Cloudy weather*/
+.cloud {
+	position: relative;
+	left: -50%;
+	z-index: 1;
+	max-width: 100%;
+	height: auto;
+	width: auto;
+}
+.small-img{
+	position: relative;
+	z-index: 2;
+	max-width: 100%;
+	height: auto;
+	width: auto;
+}
+
+@keyframes moveclouds {
+	0%	{ 
+		transform: translate(-400px, -250px);
+		opacity: 0; 
+	}
+	35%	{ transform: translate(-200px, -200px);
+		opacity: 0.5; 
+	}
+	70% { transform: translate(-50px, -250px);
+		opacity: 0.5; 
+	}
+	100% { transform: translate(150px, -200px);
+		opacity: 0; 
+	}
+}
+.small-img {
+	animation: moveclouds 7s infinite linear;
+}
+
+
+/*Sunshine*/
+@keyframes sunshine {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.sun {
+	position: relative;
+	left: -50%;
+	animation: sunshine 25s infinite linear;
+	z-index: 1;
+}
+
+/*Snowfall*/
+.snow {
+	position: absolute;
+	left: -40%;
+	z-index: 5;
+}
+@keyframes snowfall {
+	0% {
+    transform: translate(-20px, 80px) rotate(70deg);
+    opacity: 1;
+}
+  25% {
+    transform: translate(20px, 160px) rotate(140deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-20px, 240px) rotate(210deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(20px, 320px) rotate(280deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-20px, 400px) rotate(360deg);
+    opacity: 0;
+  }
+}
+.snowflake1, .snowflake2 {
+	position: relative;
+	left: -40%;
+	z-index: -2;
+	animation: snowfall 4s linear infinite;
+}
+
+
+/*raining*/
+.raining {
+	position: relative;
+	left: -40%;
+	z-index: 1;
+}
+.raindrop{
+	position: relative;
+	top: 50px;
+	left: -90%;
+	animation: raining 2s linear infinite;
+}
+@keyframes raining {
+	0% {
+		transform: translateY(70px);
+		opacity: 0;
+	}
+	25% {
+		transform: translateY(100px);
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(130px);
+		opacity: 1;
+	}
+	75% {
+		transform: translateY(160px);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(190px);
+		opacity: 0;
+	}
+}
+
+/*thunderstorm*/
+.darkcloud {
+	position: relative;
+	max-width: 100%;
+	height: auto;
+	width: auto;
+	left: -50%;
+	z-index: 5;
+}
+.lightning {
+	position: relative;
+	top: -50px;
+	animation: shake 3s infinite;
+}
+@keyframes shake {
+    0%, 30% {
+    	transform: translateX(0);
+    }
+    2.5%, 7.5%, 12.5%, 17.5%, 22.5%, 27.5% {
+    	transform: translateX(-5px);
+    }
+    5%, 10%, 15%, 20%, 25% {
+    	transform: translateX(5px);
+    }
+}
+@media(max-width:1200px) and (min-width:992px) {
+	.images {
+    height: 550px;
+  }
+}
+
+	
+@media(max-width:992px) and (min-width:768px) {
+	.images {
+    height: 500px;
+  }
+
+}
+@media(max-width:767px) {
+	.app{
+		font-size: 60px;
+	}
+	.country {
+		font-size: 36px;
+	}
+	h3{
+		font-size: 40px;
+	}
+	.images {
+		height: 450px;
+	}
+	.snow{
+		left: -150%;
+	}
+	.snowflake1, .snowflake2{
+		left: -30%;
+	}
+	.raindrop{
+		top: -90px;
+		left: -10%;
+	}
+
+}
+
+
+
+.advice {
+	border: 2px solid white;
+	border-radius: 5px;
+	background-color: #FFFFF0;
+	width: 180px;
+	height: 200px;
+	padding-top: 15px;
+	margin-top: -130px;
+	display: block;	
+	float: left;
+}
+p {
+	color: #00BFFF;
+	font-size: 17px;
+}
+.thing > img {
+	padding-left: auto;
+	padding-right: auto;
+}
